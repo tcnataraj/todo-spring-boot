@@ -16,6 +16,7 @@ sonarqube {
         property 'sonar.host.url', 'https://sonarcloud.io'
         property 'sonar.organization', 'bmuschko-github'
         property 'sonar.login', System.getenv('SONAR_LOGIN')
+        property 'sonar.projectkey', 'demonatarajnew'
         properties['sonar.tests'] += sourceSets.integrationTest.java.srcDirs
     }
 }
