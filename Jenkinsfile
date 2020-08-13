@@ -57,12 +57,13 @@ pipeline {
             }
         }
         stage('Deploy to Production') {
-            environment {
-                HEROKU_API_KEY = credentials('HEROKU_API_KEY')
-            }
+            //environment {
+              //  HEROKU_API_KEY = credentials('HEROKU_API_KEY')
+            //}
             steps {
                 unstash 'app'
-                gradlew('deployHeroku')
+               // gradlew('deployHeroku')
+                echo 'Running Placeholder for Deployment'
             }
         }
     }
@@ -74,5 +75,5 @@ pipeline {
 }
 
 def gradlew(String... args) {
-    sh "./gradlew ${args.join(' ')} -s"
+    bat "./gradlew ${args.join(' ')} -s"
 }
