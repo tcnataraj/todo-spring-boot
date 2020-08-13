@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
-    triggers {
-        pollSCM('*/5 * * * *')
-    }
 
     stages {
         stage('Compile') {
@@ -75,5 +72,5 @@ pipeline {
 }
 
 def gradlew(String... args) {
-    bat "./gradlew ${args.join(' ')} -s"
+    bat ".//gradlew ${args.join(' ')} -s"
 }
